@@ -1,0 +1,941 @@
+[reserved_words]
+
+[reserved_words."ACDRW$"]
+type = "H1"
+description = "Alphabetic drawer of the run control report issuing the external RSR statement."
+
+[reserved_words."ACTINP$"]
+type = "I6"
+description = "Handle of the object last accessed — usually a control within a window, not the window itself. (GI-BIS only)"
+
+[reserved_words."ACTWIN$"]
+type = "I6"
+description = "Window handle of the last window accessed. When input is received from a control, contains the handle of the window containing that control. (GI-BIS only)"
+
+[reserved_words."ADRW$"]
+type = "H1"
+description = "Alphabetic drawer of the current result."
+
+[reserved_words."ADRW1$"]
+type = "H1"
+description = "Alphabetic drawer of the -1 result."
+
+[reserved_words."ADRW2$"]
+type = "H1"
+description = "Alphabetic drawer of the -2 result."
+
+[reserved_words."ADRW3$"]
+type = "H1"
+description = "Alphabetic drawer of the -3 result."
+
+[reserved_words."ADRW4$"]
+type = "H1"
+description = "Alphabetic drawer of the -4 result."
+
+[reserved_words."ADRW5$"]
+type = "H1"
+description = "Alphabetic drawer of the -5 result."
+
+[reserved_words."ADRW6$"]
+type = "H1"
+description = "Alphabetic drawer of the -6 result."
+
+[reserved_words."ADRW7$"]
+type = "H1"
+description = "Alphabetic drawer of the -7 result."
+
+[reserved_words."ADRW8$"]
+type = "H1"
+description = "Alphabetic drawer of the -8 result."
+
+[reserved_words."ADRW9$"]
+type = "H1"
+description = "Alphabetic drawer of the -9 result."
+
+[reserved_words."ADRW10$"]
+type = "H1"
+description = "Alphabetic drawer of the -10 result."
+
+[reserved_words."ADRW11$"]
+type = "H1"
+description = "Alphabetic drawer of the -11 result."
+
+[reserved_words."ADRW12$"]
+type = "H1"
+description = "Alphabetic drawer of the -12 result."
+
+[reserved_words."ADRW13$"]
+type = "H1"
+description = "Alphabetic drawer of the -13 result."
+
+[reserved_words."ADRW14$"]
+type = "H1"
+description = "Alphabetic drawer of the -14 result."
+
+[reserved_words."ADRW15$"]
+type = "H1"
+description = "Alphabetic drawer of the -15 result."
+
+[reserved_words."ADRW16$"]
+type = "H1"
+description = "Alphabetic drawer of the -16 result."
+
+[reserved_words."AEDRW$"]
+type = "H1"
+description = "Alphabetic drawer of the run control report."
+
+[reserved_words."AKEY$"]
+type = ""
+description = "Key or key sequence used to perform the Abort command."
+
+[reserved_words."APILVL$"]
+type = ""
+description = "Functional level of the graphical user interface. Contact Customer Support for the correct value."
+
+[reserved_words."AREA$"]
+type = "H12"
+description = "Named area."
+
+[reserved_words."ASPECT$"]
+type = "I12"
+description = "Aspect ratio (used with graphics). (Windows: provides a constant but is ignored.)"
+
+[reserved_words."AXDRW$"]
+type = "H1"
+description = "Alphabetic drawer of the failing script."
+
+[reserved_words."BPORT$"]
+type = "I1"
+description = "(OS 2200 only) Script started in the batch port. Nonzero = yes; zero = no."
+
+[reserved_words."CAB$"]
+type = "I4"
+description = "Cabinet number of the report or result last processed, or on display when the script started. Zero if none. (Windows/Linux/UNIX: always the even cabinet number. OS 2200: may contain the odd cabinet number when a script or CS command displays an odd cabinet report.)"
+
+[reserved_words."CAB1$"]
+type = "I4"
+description = "Currently active cabinet number. (OS 2200: scripts ignore CAB1$ — only CAB$ needs to be odd to prevent script updates.)"
+
+[reserved_words."CALL$"]
+type = "I3"
+description = "Number of CALL levels remaining."
+
+[reserved_words."CDRW$"]
+type = "I6"
+description = "Drawer number of the run control report issuing the RSR statement to start an external subroutine. Zero if the subroutine is internal."
+
+[reserved_words."CERR$"]
+type = "I6"
+description = "Message number of the error. (Windows/Linux/UNIX: same as XERR$, but also clears the error condition. OS 2200: same as XERR$.)"
+
+[reserved_words."CHAR$"]
+type = "I3"
+description = "Number of characters per line in the drawer."
+
+[reserved_words."CHKPSW$"]
+type = "I1"
+description = "(OS 2200 only) Write passwords must be specified (via PSW) before reports with write passwords can be updated. Nonzero = yes; zero = no."
+
+[reserved_words."CHR$"]
+type = ""
+description = "Sets a variable to a specific ASCII character: @CHG <variable>h1 CHR$ octal . where octal is 000–377. Caution: control characters (000–037) and extended ASCII (177–377) should not be written to BIS reports."
+
+[reserved_words."CLLADRW$"]
+type = "H1"
+description = "Alphabetic drawer of the run control report issuing the last CALL statement. Blank if CALL level 0."
+
+[reserved_words."CLLCAB$"]
+type = "I4"
+description = "Cabinet number of the run control report issuing the last CALL statement. Zero if CALL level 0."
+
+[reserved_words."CLLDRW$"]
+type = "I6"
+description = "Drawer number of the run control report issuing the last CALL statement. Zero if CALL level 0."
+
+[reserved_words."CLLLIN$"]
+type = "I4"
+description = "Line number of the run control report issuing the last CALL statement. Zero if CALL level 0."
+
+[reserved_words."CLLLVL$"]
+type = "I3"
+description = "Current CALL level."
+
+[reserved_words."CLLNAM$"]
+type = "H12"
+description = "Name of the active registered CALL script. Blank if none active."
+
+[reserved_words."CLLRPT$"]
+type = "I4"
+description = "Report number of the run control report issuing the last CALL statement. Range: -0 to MAXRNM$ if called from a temporary script report. Zero if CALL level 0."
+
+[reserved_words."COLOR$"]
+type = "I1"
+description = "Color terminal flag. Nonzero = color display. Always returns nonzero, even for monochrome VGA."
+
+[reserved_words."CPRIV$"]
+type = "I1"
+description = "User has coordinator privileges. Nonzero = yes; zero = no. (Windows/Linux/UNIX: user must be in department 2.)"
+
+[reserved_words."CRPT$"]
+type = "I4"
+description = "Report number of the run control report issuing the external RSR statement. Zero if internal subroutine."
+
+[reserved_words."CURH$"]
+type = "I3"
+description = "Horizontal character position of the cursor."
+
+[reserved_words."CURSEC$"]
+type = "I12"
+description = "(Windows/Linux/UNIX only) Current number of seconds since January 1, 1970."
+
+[reserved_words."CURV$"]
+type = "I2"
+description = "Vertical character position of the cursor."
+
+[reserved_words."DATE0$"]
+type = "H5"
+description = "Current date in YMMDD format."
+
+[reserved_words."DATE1$"]
+type = "H6"
+description = "Current date in YYMMDD format."
+
+[reserved_words."DATE2$"]
+type = "H9"
+description = "Current date in DD MMM YY format."
+
+[reserved_words."DATE3$"]
+type = "H4"
+description = "Current date in YDDD format."
+
+[reserved_words."DATE4$"]
+type = "H5"
+description = "Current date in YYDDD format."
+
+[reserved_words."DATE5$"]
+type = "I6"
+description = "Current date in DDMMYY format."
+
+[reserved_words."DATE6$"]
+type = "H8"
+description = "Current date in MM/DD/YY format."
+
+[reserved_words."DATE7$"]
+type = "H18"
+description = "Current date in MONTH DD, YYYY format."
+
+[reserved_words."DATE8$"]
+type = "I6"
+description = "Current date in MMDDYY format."
+
+[reserved_words."DATE9$"]
+type = "H8"
+description = "Current date in DD/MM/YY format."
+
+[reserved_words."DATE11$"]
+type = "H8"
+description = "Current date in YYYYMMDD format."
+
+[reserved_words."DATE12$"]
+type = "H11"
+description = "Current date in DD MMM YYYY format."
+
+[reserved_words."DATE14$"]
+type = "H7"
+description = "Current date in YYYYDDD format."
+
+[reserved_words."DATE15$"]
+type = "I8"
+description = "Current date in DDMMYYYY format."
+
+[reserved_words."DATE16$"]
+type = "H10"
+description = "Current date in MM/DD/YYYY format."
+
+[reserved_words."DATE18$"]
+type = "I8"
+description = "Current date in MMDDYYYY format."
+
+[reserved_words."DATE19$"]
+type = "H10"
+description = "Current date in DD/MM/YYYY format."
+
+[reserved_words."DATE20$"]
+type = "H10"
+description = "Current date in YYYY-MM-DD format."
+
+[reserved_words."DATE21$"]
+type = "H9"
+description = "Current date in DD-MMM-YY format."
+
+[reserved_words."DATETZ$"]
+type = "S24"
+description = "(OS 2200 only) Current date/time/zone in YYYY-MM-DD HH:MM:SS ZZZZ format. Time zone derived from the TZ environmental variable."
+
+[reserved_words."DAY$"]
+type = "H3"
+description = "Current day of the week (e.g., MON, TUE)."
+
+[reserved_words."DBASE$"]
+type = ""
+description = "(Windows/Linux/UNIX only) Current site database path."
+
+[reserved_words."DBTHRS$"]
+type = "I4"
+description = "(Windows/Linux/UNIX only) Configured database threshold value. If DBUSG$ exceeds this at sign-on, a threshold warning appears."
+
+[reserved_words."DBUSG$"]
+type = "I4"
+description = "(Windows/Linux/UNIX only) Percent of database space currently in use."
+
+[reserved_words."DEBUG$"]
+type = "I1"
+description = "Script debug state. 0 = none, 1 = Workshop, 2 = Legacy RDB."
+
+[reserved_words."DEPN$"]
+type = "I4"
+description = "User's department sign-on number."
+
+[reserved_words."DEPT$"]
+type = "H11"
+description = "User's department name."
+
+[reserved_words."DFUACT$"]
+type = "I4"
+description = "Number of reports currently locked by a script using deferred update that have actually been updated."
+
+[reserved_words."DFULOK$"]
+type = "I4"
+description = "Number of reports currently locked by a script using deferred update at this point in time."
+
+[reserved_words."DFUMAX$"]
+type = "I4"
+description = "Configured maximum number of reports that can be locked by a script for deferred update at one time."
+
+[reserved_words."DLINE$"]
+type = "I8"
+description = "Line number of the first non-held line on display."
+
+[reserved_words."DLP$"]
+type = "I12"
+description = "Number of data lines processed during the script (includes LLPs and all lines processed)."
+
+[reserved_words."DRW$"]
+type = "I6"
+description = "Drawer number of the current result (-0)."
+
+[reserved_words."DRW1$"]
+type = "I6"
+description = "Drawer number of the -1 result."
+
+[reserved_words."DRW2$"]
+type = "I6"
+description = "Drawer number of the -2 result."
+
+[reserved_words."DRW3$"]
+type = "I6"
+description = "Drawer number of the -3 result."
+
+[reserved_words."DRW4$"]
+type = "I6"
+description = "Drawer number of the -4 result."
+
+[reserved_words."DRW5$"]
+type = "I6"
+description = "Drawer number of the -5 result."
+
+[reserved_words."DRW6$"]
+type = "I6"
+description = "Drawer number of the -6 result."
+
+[reserved_words."DRW7$"]
+type = "I6"
+description = "Drawer number of the -7 result."
+
+[reserved_words."DRW8$"]
+type = "I6"
+description = "Drawer number of the -8 result."
+
+[reserved_words."DRW9$"]
+type = "I6"
+description = "Drawer number of the -9 result."
+
+[reserved_words."DRW10$"]
+type = "I6"
+description = "Drawer number of the -10 result."
+
+[reserved_words."DRW11$"]
+type = "I6"
+description = "Drawer number of the -11 result."
+
+[reserved_words."DRW12$"]
+type = "I6"
+description = "Drawer number of the -12 result."
+
+[reserved_words."DRW13$"]
+type = "I6"
+description = "Drawer number of the -13 result."
+
+[reserved_words."DRW14$"]
+type = "I6"
+description = "Drawer number of the -14 result."
+
+[reserved_words."DRW15$"]
+type = "I6"
+description = "Drawer number of the -15 result."
+
+[reserved_words."DRW16$"]
+type = "I6"
+description = "Drawer number of the -16 result."
+
+[reserved_words."DTM$"]
+type = "I1"
+description = "(OS 2200 only) Data Transfer Module status. 0 = not configured; 1 = configured, not attached; 2 = configured and attached; 3 = script is processing DTM input."
+
+[reserved_words."DTNAM$"]
+type = ""
+description = "(OS 2200 only) Name of this BIS system as known to DTM."
+
+[reserved_words."DWCAP$"]
+type = "S18"
+description = "BIS API capabilities string — a sequence of 0s and 1s where 1 = supported. Use substring format to check individual positions (e.g., DWCAP$(9-1))."
+
+[reserved_words."ECAB$"]
+type = "I4"
+description = "Cabinet number of the run control report."
+
+[reserved_words."EDRW$"]
+type = "I6"
+description = "Drawer number of the run control report."
+
+[reserved_words."ELINE$"]
+type = "I6"
+description = "Current execution line in the run control report."
+
+[reserved_words."ENVSTR$"]
+type = ""
+description = "Available environmental variable space in bytes. Maximum total size: 14,000 bytes."
+
+[reserved_words."ERPT$"]
+type = "I4"
+description = "Report number of the run control report."
+
+[reserved_words."ESC$"]
+type = ""
+description = "(Windows/Linux/UNIX only) Escape sequence. Value varies by platform — avoid in new applications."
+
+[reserved_words."ETYPE$"]
+type = "I6"
+description = "Drawer number of the run control report."
+
+[reserved_words."F1$"]
+type = ""
+description = "Key or key sequence used as function key F1."
+
+[reserved_words."F2$"]
+type = ""
+description = "Key or key sequence used as function key F2."
+
+[reserved_words."F3$"]
+type = ""
+description = "Key or key sequence used as function key F3."
+
+[reserved_words."F4$"]
+type = ""
+description = "Key or key sequence used as function key F4."
+
+[reserved_words."F5$"]
+type = ""
+description = "Key or key sequence used as function key F5."
+
+[reserved_words."F6$"]
+type = ""
+description = "Key or key sequence used as function key F6."
+
+[reserved_words."F7$"]
+type = ""
+description = "Key or key sequence used as function key F7."
+
+[reserved_words."F8$"]
+type = ""
+description = "Key or key sequence used as function key F8."
+
+[reserved_words."F9$"]
+type = ""
+description = "Key or key sequence used as function key F9."
+
+[reserved_words."F10$"]
+type = ""
+description = "Key or key sequence used as function key F10."
+
+[reserved_words."FCAB$"]
+type = ""
+description = "Current form cabinet number."
+
+[reserved_words."FCC$"]
+type = "I1"
+description = "(OS 2200 only) UTS 400 station has FCC hardware protect capability. Nonzero = yes; zero = no."
+
+[reserved_words."FDRW$"]
+type = "I6"
+description = "Drawer number of the Screen Control form on display."
+
+[reserved_words."FFTYPE$"]
+type = "I6"
+description = "Drawer (form type) number of freeform drawer A."
+
+[reserved_words."FIELD$"]
+type = "I4"
+description = "Relative input field number in which the cursor is located. (Windows/Linux/UNIX: max 255 fields. OS 2200: max 100 fields.)"
+
+[reserved_words."FIELDN$"]
+type = ""
+description = "Field number relative to the beginning of the screen in which the cursor is located."
+
+[reserved_words."FKEY$"]
+type = ""
+description = "Number of the function key pressed by the script user."
+
+[reserved_words."FMT$"]
+type = "I2"
+description = "Format of the report on display (script must be registered as format sensitive)."
+
+[reserved_words."FPAGE$"]
+type = ""
+description = "Last explicitly called page of a Screen Control form."
+
+[reserved_words."FRESTR$"]
+type = "I6"
+description = "Remaining available characters in the script string and array variable space."
+
+[reserved_words."FRPT$"]
+type = "I4"
+description = "Report number of the Screen Control form on display."
+
+[reserved_words."GLBSTR$"]
+type = ""
+description = "Available global variable space in bytes. Maximum size: 14,700 bytes."
+
+[reserved_words."GRAPH$"]
+type = "I1"
+description = "Graphics terminal flag. Zero = terminal cannot display graphics."
+
+[reserved_words."HLINES$"]
+type = ""
+description = "Number of held lines."
+
+[reserved_words."ICVAR$"]
+type = "S80"
+description = "Input data entered on the control line (no leading tabs required; strings allowed). Used with CHD."
+
+[reserved_words."INMSV$"]
+type = "S80"
+description = "Input data from the function mask on screen. Used with OUM."
+
+[reserved_words."INPUT$"]
+type = ""
+description = "Input data from the screen or external source. Up to 80 variables and strings. Used with OUT, RRN, RUN, BR, SC."
+
+[reserved_words."INSTR$"]
+type = ""
+description = "Input data from the screen or external source (line-based). Up to 80 variables and strings. Used with OUT, RRN, RUN, BR, SC."
+
+[reserved_words."INVAR$"]
+type = ""
+description = "Input from tab-delimited input fields on screen. Up to 80 variables. Used with OUT or SC."
+
+[reserved_words."INVR1$"]
+type = ""
+description = "Input from input fields on screen (multi-field into one variable). Up to 80 variables. Used with OUT or SC."
+
+[reserved_words."IO$"]
+type = "I12"
+description = "Number of storage I/O requests processed during the script."
+
+[reserved_words."IP$"]
+type = "I12"
+description = "Processing time consumed during a script, in milliseconds."
+
+[reserved_words."LANG$"]
+type = "I1"
+description = "User's currently selected language number."
+
+[reserved_words."LCAB$"]
+type = "I4"
+description = "Cabinet number of the user's currently selected language."
+
+[reserved_words."LEVEL$"]
+type = "H12"
+description = "String identifying the current software level. Redefined with every product build. (Formerly MAPER$.)"
+
+[reserved_words."LIBDRW$"]
+type = ""
+description = "Drawer number of the System Library Routines."
+
+[reserved_words."LINE$"]
+type = "I8"
+description = "Line number of the next line to read. Used with RDL, RLN."
+
+[reserved_words."LINK$"]
+type = "I1"
+description = "Script started from another script via LNK. Nonzero = yes; zero = no."
+
+[reserved_words."LITEM$"]
+type = "I6"
+description = "Line number in a list box from which the user transmitted. (GI-BIS only)"
+
+[reserved_words."LLP$"]
+type = "I12"
+description = "Number of logic lines processed during the script."
+
+[reserved_words."LNKDRW$"]
+type = "I6"
+description = "Drawer number of the script that issued the LNK statement."
+
+[reserved_words."LNKRPT$"]
+type = "I4"
+description = "Report number of the script that issued the LNK statement."
+
+[reserved_words."LOOK$"]
+type = ""
+description = "(OS 2200 only) User interface in effect. 0 = Pre-35R1/Pre-35R1; 1 = Pre-35R1/Menu; 2 = Menu/Pre-35R1; 3 = Menu/Menu."
+
+[reserved_words."LRRSD$"]
+type = ""
+description = "Local site identifier. (OS 2200: I6. Windows/Linux/UNIX: A1.)"
+
+[reserved_words."MAPNAM$"]
+type = ""
+description = "Name of the system. (OS 2200: H6. Windows/Linux/UNIX: H14.)"
+
+[reserved_words."MAXCAB$"]
+type = "I4"
+description = "Maximum cabinet number available on the system."
+
+[reserved_words."MAXCHR$"]
+type = "I6"
+description = "Maximum number of characters (width) of a report. Individual drawers may define smaller values."
+
+[reserved_words."MAXDRW$"]
+type = "I6"
+description = "Maximum drawer number available on the system."
+
+[reserved_words."MAXEVR$"]
+type = "I3"
+description = "Maximum number of environmental variables allowed in the script."
+
+[reserved_words."MAXGVR$"]
+type = "I3"
+description = "Maximum number of global variables allowed in the script."
+
+[reserved_words."MAXLAB$"]
+type = "I3"
+description = "Maximum number of labels allowed in the script."
+
+[reserved_words."MAXLIN$"]
+type = "I9"
+description = "Maximum number of lines (length) of a permanent report. Individual drawers may define smaller values."
+
+[reserved_words."MAXLNS$"]
+type = "I9"
+description = "Maximum number of lines (length) of a result report. Individual drawers may define smaller values."
+
+[reserved_words."MAXRNM$"]
+type = "I9"
+description = "Maximum number of renamed reports or results per script."
+
+[reserved_words."MAXRPT$"]
+type = "I4"
+description = "Maximum report number available on the system."
+
+[reserved_words."MAXRW$"]
+type = "I3"
+description = "Maximum number of characters (width) of a report. Individual drawers may define smaller values."
+
+[reserved_words."MAXVAR$"]
+type = "I3"
+description = "Maximum number of variables allowed in a script. (Windows/Linux/UNIX: includes 30 environmental and 70 global variables.)"
+
+[reserved_words."MODE$"]
+type = ""
+description = "(OS 2200 only) If odd, the user cannot update reports manually. Scripts only check MODE$ to prevent script updates."
+
+[reserved_words."MODE1$"]
+type = ""
+description = "(OS 2200 only) If odd, the user cannot update reports manually. Scripts ignore MODE1$ — only MODE$ needs to be odd to prevent script updates."
+
+[reserved_words."MSEC$"]
+type = "I12"
+description = "Current number of milliseconds since midnight. Resolution is hardware dependent."
+
+[reserved_words."MSGQ$"]
+type = ""
+description = "Message queued for user (USER$) or station (STNUM$). 0 = no messages; 1 = messages queued."
+
+[reserved_words."MXDEPN$"]
+type = "I4"
+description = "(OS 2200 only) Maximum number of departments."
+
+[reserved_words."NET$"]
+type = "I1"
+description = "0 = script running on local host; 1 = Network Remote (NRM) interactive session; 2 = Network Run (NRN) non-interactive session."
+
+[reserved_words."NETDRW$"]
+type = "I6"
+description = "Drawer number of the Network Configuration drawer."
+
+[reserved_words."NETOUT$"]
+type = ""
+description = "Network connection state following NRM. 0 = connection inactive; 1 = connection still active."
+
+[reserved_words."NETRPT$"]
+type = "I4"
+description = "Report number of the Network Configuration report."
+
+[reserved_words."NETSIT$"]
+type = ""
+description = "Network site identification letter."
+
+[reserved_words."ODEPN$"]
+type = "I4"
+description = "Originating user's department sign-on number. Equals DEPN$ if not in a network environment. (FCS reports only.)"
+
+[reserved_words."OLINE$"]
+type = "I8"
+description = "Number of the next line to write in the output area."
+
+[reserved_words."OPRIV$"]
+type = "I1"
+description = "(OS 2200 only) User has operator privileges. Nonzero = yes; zero = no."
+
+[reserved_words."ORSTAN$"]
+type = ""
+description = "Originating station number of a background script. (Windows/Linux/UNIX: I5. OS 2200: size defined by HIGHST config parameter.)"
+
+[reserved_words."ORUN$"]
+type = "H12"
+description = "Originating name of the executing script. If blank, session opened via MAPPER SYSSLCT. Equals RUN$ if not in a network environment. (FCS reports only.)"
+
+[reserved_words."OSITE$"]
+type = "H18"
+description = "Originating name of the current site. Equals SITE$ if not in a network environment. (FCS reports only.)"
+
+[reserved_words."OSFILS$"]
+type = ""
+description = "(OS 2200 only) 0 = external functions run with BIS background job credentials; 1 = run with OS 2200 user-id credentials."
+
+[reserved_words."OSPLEN$"]
+type = "I2"
+description = "Maximum number of characters in an OS 2200 password (maximum 18)."
+
+[reserved_words."OSTNUM$"]
+type = "I5"
+description = "Originating station number executing the script. Zero if transient station. Equals STNUM$ if not in a network environment. (FCS reports only.)"
+
+[reserved_words."OSUIDS$"]
+type = ""
+description = "Controls whether OS 2200 user-ids are allowed or required for BIS logon. 0 = irrelevant; 1 = allowed; 2 = required."
+
+[reserved_words."OSUSER$"]
+type = ""
+description = "(OS 2200 only) 0 = user logged on with a non-OS 2200 user-id; 1 = logged on with an OS 2200 user-id."
+
+[reserved_words."OSYSNAM$"]
+type = "H5"
+description = "Originating port identification name (5 characters). Blank if not all networked systems support originating site information. (FCS reports only.)"
+
+[reserved_words."OUSER$"]
+type = "H11"
+description = "Originating user-id of the user who started the script. Equals USER$ if not in a network environment. (FCS reports only.)"
+
+[reserved_words."PLNG$"]
+type = ""
+description = "(Windows/Linux/UNIX only) Site's primary (default) language cabinet number."
+
+[reserved_words."RPRIV$"]
+type = ""
+description = "(OS 2200 only) User has script design privileges (script errors, BLT, CLT, RDB). 0 = no privileges; nonzero = has privileges."
+
+[reserved_words."RPT$"]
+type = "I4"
+description = "Number of the report or result last processed, or on display when the script started. -0 = current result; 0 = no report. After ADR or DUP, contains the new report number."
+
+[reserved_words."RRSID$"]
+type = "I12"
+description = "Remote script site-id."
+
+[reserved_words."RSLANT$"]
+type = "H1"
+description = "Reverse slant character (\\)."
+
+[reserved_words."RUN$"]
+type = "H12"
+description = "Name of the executing script."
+
+[reserved_words."SCNH$"]
+type = "I3"
+description = "Number of columns displayable on the UTS terminal or GI-BIS main window, including those requiring scroll."
+
+[reserved_words."SCNV$"]
+type = "I2"
+description = "Number of rows displayable on the UTS terminal or GI-BIS main window, including those requiring scroll."
+
+[reserved_words."SCREEN$"]
+type = "I3"
+description = "Screen/session capabilities. (Windows/Linux/UNIX: 006 if executed from ICE or Java EE Server. OS 2200: 000–005 = background/no screen variants; 100–103 = terminal types; 200–201 = workstation.)"
+
+[reserved_words."SECDRW$"]
+type = "I6"
+description = "Drawer number of the Security Registration reports."
+
+[reserved_words."SECGRP$"]
+type = "I3"
+description = "User's security group number (1–200)."
+
+[reserved_words."SECRPT$"]
+type = "I4"
+description = "User's security registration report number. (Windows/Linux/UNIX: reports 11–20. OS 2200: reports 1–2000.)"
+
+[reserved_words."SECURE$"]
+type = "I1"
+description = "(Linux/UNIX only) Installation mode. 0 = Trusted Mode; 1 = Secure Mode."
+
+[reserved_words."SGRACT$"]
+type = "I2"
+description = "Number of active reports in the Session Global Report Table."
+
+[reserved_words."SGRMAX$"]
+type = "I2"
+description = "Maximum number of reports allowed in the Session Global Report Table."
+
+[reserved_words."SITE$"]
+type = ""
+description = "Name of the current site. (OS 2200: H8. Windows/Linux/UNIX: H14.)"
+
+[reserved_words."SOE$"]
+type = "H1"
+description = "Start-of-entry (SOE) character."
+
+[reserved_words."SOEH$"]
+type = "I3"
+description = "Horizontal cursor position of the SOE character."
+
+[reserved_words."SOEV$"]
+type = "I2"
+description = "Vertical cursor position of the SOE character."
+
+[reserved_words."SPRIV$"]
+type = "I1"
+description = "(OS 2200 only) User has system analyst privileges. Nonzero = yes; zero = no."
+
+[reserved_words."STAT1$"]
+type = ""
+description = "Quantity or status reserved word. Contents defined per-statement in individual statement documentation."
+
+[reserved_words."STAT2$"]
+type = ""
+description = "Quantity or status reserved word. Contents defined per-statement in individual statement documentation."
+
+[reserved_words."STAT3$"]
+type = ""
+description = "Quantity or status reserved word. Contents defined per-statement in individual statement documentation."
+
+[reserved_words."STAT4$"]
+type = ""
+description = "(OS 2200 only) Quantity or status reserved word. Contents defined per-statement."
+
+[reserved_words."STNUM$"]
+type = ""
+description = "Station number executing the script. (Windows/Linux/UNIX: I5. OS 2200: size defined by HIGHST start parameter.)"
+
+[reserved_words."SYSNAM$"]
+type = "H5"
+description = "Platform identification code. UNLNX = Linux; M1100 = OS 2200; SUN_S = UNIX (Sun SPARC); PWNT0 = Windows."
+
+[reserved_words."TAB$"]
+type = "H1"
+description = "Tab character (ASCII 011)."
+
+[reserved_words."TCCS$"]
+type = "I4"
+description = "(OS 2200 only) Terminal coded character set identifier (CCS-ID)."
+
+[reserved_words."TIC$"]
+type = "H1"
+description = "Apostrophe character."
+
+[reserved_words."TIME$"]
+type = "H8"
+description = "Current time in HH:MM:SS format."
+
+[reserved_words."TITLE$"]
+type = ""
+description = "Title of the current -0 report, when present."
+
+[reserved_words."TTYPE$"]
+type = "H8"
+description = "Terminal type of the station executing the script. (Windows/Linux/UNIX: read from the configuration report or MAPTERM environment variable.)"
+
+[reserved_words."USER$"]
+type = "H11"
+description = "User-id of the user who started the script."
+
+[reserved_words."WEBBRK$"]
+type = "I1"
+description = "Current output area web script interpretation mode based on the last @BRK statement. 0 = normal mode; 1 = web script literal mode; 2 = web script mode."
+
+[reserved_words."WND$"]
+type = "I6"
+description = "Main workstation window handle. (GI-BIS and Windows Client only.)"
+
+[reserved_words."WS$"]
+type = "I1"
+description = "Workstation session opened to a host system. Zero = not using GI-BIS or Windows Client."
+
+[reserved_words."WSIPA$"]
+type = "H15"
+description = "IP address of the workstation in xxx.xxx.xxx.xxx format. Zero if not a workstation or address unavailable. (GI-BIS and Windows Client only.)"
+
+[reserved_words."WSITE$"]
+type = "S26"
+description = "Unique identifier string for each host system across all platforms. Used primarily for forming unique filenames for workstation objects. (GI-BIS and Windows Client only.)"
+
+[reserved_words."XDRW$"]
+type = "I6"
+description = "Drawer number of the run control report where the script aborted or failed. Used with RAR, RER."
+
+[reserved_words."XERR$"]
+type = "I6"
+description = "Message number of the error encountered by an error routine (RER)."
+
+[reserved_words."XFUN$"]
+type = "H6"
+description = "Last function call before the script aborted or failed. Used with RAR, RER."
+
+[reserved_words."XKEY$"]
+type = ""
+description = "Key or key sequence used to transmit."
+
+[reserved_words."XLINE$"]
+type = "I6"
+description = "Line number in the run control report where the script aborted or failed. Used with RAR, RER."
+
+[reserved_words."XRID$"]
+type = "I4"
+description = "Report number of the run control report where the script aborted or failed. Same as XRPT$. Used with RAR, RER."
+
+[reserved_words."XRPT$"]
+type = "I4"
+description = "Report number of the run control report where the script aborted or failed. Used with RAR, RER."
+
+[reserved_words."XSSBRK$"]
+type = ""
+description = "Current output area XSS encode interpretation mode based on the last @BRK statement. 0 = normal; 1 = XSS encoding active; H = HTML; A = Attribute; J = JavaScript; C = CSS; U = URL encoding."
+
+[reserved_words."XTYPE$"]
+type = "I6"
+description = "Drawer (form type) of the run control report where the script aborted or failed. Same as XDRW$. Used with RAR, RER."
+
+[reserved_words."YEAR$"]
+type = "I4"
+description = "Current year in YYYY format."

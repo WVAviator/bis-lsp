@@ -7,6 +7,7 @@ use crate::hover::{HoverContext, HoverProvider, node_to_lsp_range};
 
 pub struct VariableHoverProvider {
     type_docs: TypeDocs,
+    reserved_word_docs: ReservedWordDocs,
 }
 
 #[derive(serde::Deserialize)]
@@ -20,11 +21,29 @@ struct TypeDocs {
     types: HashMap<String, TypeDoc>,
 }
 
+#[derive(serde::Deserialize)]
+struct ReservedWordDoc {
+    #[serde(rename = "type")]
+    type_str: String,
+    description: String,
+}
+
+#[derive(serde::Deserialize)]
+struct ReservedWordDocs {
+    reserved_words: HashMap<String, ReservedWordDoc>,
+}
+
 impl VariableHoverProvider {
     pub fn new() -> Self {
         let type_docs: TypeDocs = toml::from_str(include_str!("../../docs/variables/types.toml"))
             .expect("Could not parse types.toml.");
-        Self { type_docs }
+        let reserved_word_docs =
+            toml::from_str(include_str!("../../docs/variables/reserved_words.toml"))
+                .expect("Could not parse reserved_words.toml");
+        Self {
+            type_docs,
+            reserved_word_docs,
+        }
     }
 }
 
@@ -33,7 +52,36 @@ impl HoverProvider for VariableHoverProvider {
         let node = ctx.node;
 
         match node.kind() {
-            "named_variable" | "env_variable" | "global_variable" | "numbered_variable" => {}
+            "named_variable" | "env_variable" | "global_variable" | "numbered_variable" => {
+                let var_text = &ctx.source[node.byte_range()];
+                let var_type = find_variable_type(&ctx, var_text, node.kind(), node)
+                    .unwrap_or("?".to_string());
+
+                let markdown = match var_type.as_str() {
+                    "?" => format!("**Variable**: `{}`\nType: `{}`", var_text, var_type),
+                    t => {
+                        let (type_char, type_size) = t.split_at(1);
+                        if let Some(type_doc) =
+                            self.type_docs.types.get(type_char.to_uppercase().as_str())
+                        {
+                            format!(
+                                "**Variable**: `{}{}`\nType: `{}`\nSize: {}",
+                                var_text, var_type, type_doc.title, type_size
+                            )
+                        } else {
+                            format!("**Variable**: `{}`\nType: `{}`", var_text, var_type)
+                        }
+                    }
+                };
+
+                Some(Hover {
+                    contents: HoverContents::Markup(MarkupContent {
+                        kind: MarkupKind::Markdown,
+                        value: markdown,
+                    }),
+                    range: Some(node_to_lsp_range(node)),
+                })
+            }
             "type" => {
                 let type_text = &ctx.source[node.byte_range()];
                 let (type_char, type_size) = type_text.split_at(1);
@@ -53,38 +101,38 @@ impl HoverProvider for VariableHoverProvider {
                     });
                 }
 
-                return None;
+                None
             }
-            _ => return None,
-        }
-
-        let var_text = &ctx.source[node.byte_range()];
-        let var_type =
-            find_variable_type(&ctx, var_text, node.kind(), node).unwrap_or("?".to_string());
-
-        let markdown = match var_type.as_str() {
-            "?" => format!("**Variable**: `{}`\nType: `{}`", var_text, var_type),
-            t => {
-                let (type_char, type_size) = t.split_at(1);
-                if let Some(type_doc) = self.type_docs.types.get(type_char.to_uppercase().as_str())
+            "reserved_word" => {
+                let rw_text = &ctx.source[node.byte_range()];
+                if let Some(rw_doc) = self
+                    .reserved_word_docs
+                    .reserved_words
+                    .get(rw_text.to_uppercase().as_str())
                 {
-                    format!(
-                        "**Variable**: `{}{}`\nType: `{}`\nSize: {}",
-                        var_text, var_type, type_doc.title, type_size
-                    )
-                } else {
-                    format!("**Variable**: `{}`\nType: `{}`", var_text, var_type)
-                }
-            }
-        };
+                    let type_string = match rw_doc.type_str.as_str() {
+                        "" => String::from(""),
+                        t => format!("Type: {}\n", t),
+                    };
 
-        Some(Hover {
-            contents: HoverContents::Markup(MarkupContent {
-                kind: MarkupKind::Markdown,
-                value: markdown,
-            }),
-            range: Some(node_to_lsp_range(node)),
-        })
+                    let markdown = format!(
+                        "Reserved Word: {}\n{}\n{}",
+                        rw_text, type_string, rw_doc.description
+                    );
+
+                    return Some(Hover {
+                        contents: HoverContents::Markup(MarkupContent {
+                            kind: MarkupKind::Markdown,
+                            value: markdown,
+                        }),
+                        range: Some(node_to_lsp_range(node)),
+                    });
+                }
+
+                None
+            }
+            _ => None,
+        }
     }
 }
 
