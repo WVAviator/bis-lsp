@@ -1,0 +1,11 @@
+[options]
+C = "Centers data within the variable."
+H = "Returns the status of a remote run link."
+L = "Left-justifies data within the variable."
+O = "Converts all uppercase alphabetic characters to lowercase."
+P = "Packs the variable so it contains only significant characters, removing unnecessary leading and trailing spaces."
+Q = "Loads delimited data from a variable or reserved word into another variable."
+R = "Right-justifies data within the variable."
+U = "Converts all lowercase alphabetic characters to uppercase."
+W = "Loads the variable with the value of a reserved word."
+Z = "Right-justifies and zero-fills the variable after data is loaded."

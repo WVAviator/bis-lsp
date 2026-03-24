@@ -3,9 +3,12 @@ use tower_lsp::{
     lsp_types::{Hover, Position, Range},
 };
 
-use crate::hover::{commands::CommandHoverProvider, variables::VariableHoverProvider};
+use crate::hover::{
+    commands::CommandHoverProvider, options::OptionsHoverProvider, variables::VariableHoverProvider,
+};
 
 mod commands;
+mod options;
 mod variables;
 
 pub struct HoverEngine {
@@ -18,6 +21,7 @@ impl HoverEngine {
             providers: vec![
                 Box::new(CommandHoverProvider::new()),
                 Box::new(VariableHoverProvider::new()),
+                Box::new(OptionsHoverProvider::new()),
             ],
         }
     }

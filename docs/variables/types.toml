@@ -1,0 +1,23 @@
+[types.A]
+title = "Alphanumeric"
+doc = "Stores any characters. Max size: 16. Left-justified, default blank (Win/Linux/UNIX)."
+
+[types.F]
+title = "Fixed-Point"
+doc = "Stores numbers with a fractional part. Format: Ftotal.fractional (e.g. f18.10). Max size: 18 including sign and decimal. Right-justified, default zero. Precision: 15 significant digits (Win/Linux/UNIX)."
+
+[types.H]
+title = "Hollerith"
+doc = "Stores any characters. Max size: 18. Left-justified, default blank."
+
+[types.I]
+title = "Integer"
+doc = "Stores whole numbers and signs (+ -). Max size: 16 including sign. Right-justified, default zero. Precision: 15 significant digits (Win/Linux/UNIX). Converted to A-type if empty or alphabetic."
+
+[types.O]
+title = "Octal"
+doc = "Stores octal numbers (0-7). Max size: 12. OS 2200 only."
+
+[types.S]
+title = "String"
+doc = "Stores any characters. Max size: 998 (Win/Linux/UNIX) or MAXCHR$ 504-999 (OS 2200). Left-justified, default blank."

@@ -5,7 +5,9 @@ edition = "2024"
 
 [dependencies]
 anyhow = "1.0.102"
+serde = "1.0.228"
 tokio = { version = "1.50.0", features = ["full"] }
+toml = "1.1.0"
 tower-lsp = "0.20.0"
 tree-sitter = "0.26.7"
 tree-sitter-bis = { path = "../tree-sitter-bis"}
