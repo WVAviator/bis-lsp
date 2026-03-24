@@ -21,3 +21,5 @@ Creates an **update result**, which enables you to `@DEL` (Delete) or `@EXT` (Ex
 `vlines` - Variable to capture the number of lines found.
 `vls` - Variable to capture the number of lines searched.
 `vrpt` - Variable to capture the report number where the find was made.
+
+---

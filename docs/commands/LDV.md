@@ -2,7 +2,7 @@
 
 Puts data into a new or existing variable, or reformats the contents of an existing variable.
 
-**Formats**
+**Format**
 
 ```
 @LDV[,o] v=vld[,v=vld,...,v=vld] .
@@ -10,7 +10,7 @@ Puts data into a new or existing variable, or reformats the contents of an exist
 @LDV,Q rv=iv,n[(delim),rv=iv,n(delim),...] .
 ```
 
-**Parameter:**
+**Parameters:**
 
 `o` — Option controlling how data is loaded. _(optional)_
 `v` — Variable to load. Include type and size to define or redefine it.
@@ -21,4 +21,6 @@ Puts data into a new or existing variable, or reformats the contents of an exist
 `n` — Number of delimiters in `iv` to skip before loading. Must be a literal. _(Format 3)_
 `(delim)` — Delimiter character. Default: tab. Parentheses required if specified. _(Format 3, optional)_
 
-See also: `@JUV` (Justify Variable) for numeric reformatting options.
+## See also: `@JUV` (Justify Variable) for numeric reformatting options
+
+---

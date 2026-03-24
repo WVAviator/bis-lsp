@@ -21,3 +21,5 @@ Finds a character string in specified fields of one or more reports in a drawer,
 `vlines` - Variable to capture the number of lines found.
 `vls` - Variable to capture the number of lines searched.
 `vrpt` - Variable to capture the report number where the find was made.
+
+---

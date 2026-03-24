@@ -14,9 +14,9 @@ impl CommandHoverProvider {
         docs.insert("LDV", include_str!("../../docs/commands/LDV.md"));
         docs.insert("SRH", include_str!("../../docs/commands/SRH.md"));
         docs.insert("SRU", include_str!("../../docs/commands/SRU.md"));
-        // docs.insert("LCV", include_str!("../../docs/commands/LCV.md"));
-        // docs.insert("RNM", include_str!("../../docs/commands/RNM.md"));
-        // docs.insert("SRH", include_str!("../../docs/commands/SRH.md"));
+        docs.insert("GTO", include_str!("../../docs/commands/GTO.md"));
+        docs.insert("INC", include_str!("../../docs/commands/INC.md"));
+        docs.insert("DEC", include_str!("../../docs/commands/DEC.md"));
         Self { docs }
     }
 }
