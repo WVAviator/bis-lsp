@@ -19,8 +19,15 @@ impl OptionsHoverProvider {
 
         let ldv: CommandOptions = toml::from_str(include_str!("../../docs/options/LDV.toml"))
             .expect("Failed to parse LDV.toml.");
+        let srh: CommandOptions = toml::from_str(include_str!("../../docs/options/SRH.toml"))
+            .expect("Failed to parse SRH.toml.");
+        // SRH has the same options as SRU
+        let sru: CommandOptions = toml::from_str(include_str!("../../docs/options/SRH.toml"))
+            .expect("Failed to parse SRH.toml.");
 
         docs.insert("LDV", ldv.options);
+        docs.insert("SRH", srh.options);
+        docs.insert("SRU", sru.options);
         // docs.insert("LCV", include_str!("../../docs/commands/LCV.md"));
         // docs.insert("RNM", include_str!("../../docs/commands/RNM.md"));
         // docs.insert("SRH", include_str!("../../docs/commands/SRH.md"));
@@ -30,10 +37,10 @@ impl OptionsHoverProvider {
 
 impl HoverProvider for OptionsHoverProvider {
     fn provide(&self, ctx: &HoverContext) -> Option<Hover> {
-        let node = ctx.node;
+        let mut node = ctx.node;
 
-        if node.kind() != "option" {
-            return None;
+        while node.kind() != "option" {
+            node = node.parent()?;
         }
 
         let parent = node.parent()?;
@@ -47,13 +54,14 @@ impl HoverProvider for OptionsHoverProvider {
             .filter(|child| child.kind() == "option")
             .filter_map(|child| {
                 let opt = ctx.source[child.byte_range()].to_uppercase();
-                let doc = option_docs.get(opt.as_str())?;
+
+                let doc = option_docs.get(opt.get(0..1)?)?;
                 let highlight = if child.id() == node.id() {
                     "→ "
                 } else {
                     "  "
                 };
-                Some(format!("{highlight}`{opt}` — {doc}"))
+                Some(format!("{highlight} {doc}"))
             })
             .collect();
 

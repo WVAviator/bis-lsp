@@ -2,25 +2,15 @@
 
 Puts data into a new or existing variable, or reformats the contents of an existing variable.
 
-**Format 1** — Load a variable with data:
+**Formats**
 
 ```
 @LDV[,o] v=vld[,v=vld,...,v=vld] .
-```
-
-**Format 2** — Reformat existing variable(s):
-
-```
 @LDV,o v[,v,...,v] .
-```
-
-**Format 3** — Load variables based on delimited content:
-
-```
 @LDV,Q rv=iv,n[(delim),rv=iv,n(delim),...] .
 ```
 
-**Parameters:**
+**Parameter:**
 
 `o` — Option controlling how data is loaded. _(optional)_
 `v` — Variable to load. Include type and size to define or redefine it.
