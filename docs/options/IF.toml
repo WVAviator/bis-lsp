@@ -1,0 +1,4 @@
+[options]
+C = "**C** - Distinguishes between uppercase and lowercase letters."
+D = "**Dn** - Performs date comparisons, where `n` is a date format number."
+S = "**S** (2200 Only) - Performs a string comparison of the operands."

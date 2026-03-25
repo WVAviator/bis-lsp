@@ -24,13 +24,13 @@ impl OptionsHoverProvider {
         // SRH has the same options as SRU
         let sru: CommandOptions = toml::from_str(include_str!("../../docs/options/SRH.toml"))
             .expect("Failed to parse SRH.toml.");
+        let if_opts: CommandOptions = toml::from_str(include_str!("../../docs/options/IF.toml"))
+            .expect("Failed to parse IF.toml");
 
         docs.insert("LDV", ldv.options);
         docs.insert("SRH", srh.options);
         docs.insert("SRU", sru.options);
-        // docs.insert("LCV", include_str!("../../docs/commands/LCV.md"));
-        // docs.insert("RNM", include_str!("../../docs/commands/RNM.md"));
-        // docs.insert("SRH", include_str!("../../docs/commands/SRH.md"));
+        docs.insert("IF", if_opts.options);
         Self { docs }
     }
 }
