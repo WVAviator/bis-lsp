@@ -31,6 +31,7 @@ impl OptionsHoverProvider {
         docs.insert("SRH", srh.options);
         docs.insert("SRU", sru.options);
         docs.insert("IF", if_opts.options);
+
         Self { docs }
     }
 }
