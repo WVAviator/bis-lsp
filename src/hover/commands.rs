@@ -19,6 +19,7 @@ impl CommandHoverProvider {
         docs.insert("DEC", include_str!("../../docs/commands/DEC.md"));
         docs.insert("IF", include_str!("../../docs/commands/IF.md"));
         docs.insert("CHG", include_str!("../../docs/commands/CHG.md"));
+        docs.insert("CALL", include_str!("../../docs/commands/CALL.md"));
         Self { docs }
     }
 }
