@@ -1,0 +1,10 @@
+[options]
+A = "**A** - Begins the search on line 2 of the report unless a start line is specified. Processes all line types."
+C = "**C(S)** (Windows/Linux/UNIX) - Distinguishes between uppercase and lowercase letters."
+F = "**F** - Finds numeric data regardless of justification or numeric format."
+G = "**G** (2200 Only) - Searches backwards through the report."
+N = "**N** - Finds the first data line *not* meeting the search criteria."
+R = "**R x-y / R x,y / R x-y,z** - Searches a range or set of reports."
+Y = "**Y[(x)]** - Searches for dates in the fields defined by the date format parameter line. Optionally specifies the line type of the parameter line."
+"@" = "**@** - Indicates that `@` characters on the parameter line specify a search for spaces."
+"/" = "**/** - Searches for the slant (`/`) character."

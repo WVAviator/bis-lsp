@@ -26,11 +26,17 @@ impl OptionsHoverProvider {
             .expect("Failed to parse SRH.toml.");
         let if_opts: CommandOptions = toml::from_str(include_str!("../../docs/options/IF.toml"))
             .expect("Failed to parse IF.toml");
+        let bfn: CommandOptions = toml::from_str(include_str!("../../docs/options/BFN.toml"))
+            .expect("Failed to parse BFN.toml.");
+        let fdr: CommandOptions = toml::from_str(include_str!("../../docs/options/FDR.toml"))
+            .expect("Failed to parse FDR.toml.");
 
         docs.insert("LDV", ldv.options);
         docs.insert("SRH", srh.options);
         docs.insert("SRU", sru.options);
         docs.insert("IF", if_opts.options);
+        docs.insert("BFN", bfn.options);
+        docs.insert("FDR", fdr.options);
 
         Self { docs }
     }
