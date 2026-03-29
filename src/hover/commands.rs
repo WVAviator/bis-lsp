@@ -26,6 +26,7 @@ impl CommandHoverProvider {
         docs.insert("FDR", include_str!("../../docs/commands/FDR.md"));
         docs.insert("RLN", include_str!("../../docs/commands/RLN.md"));
         docs.insert("RDL", include_str!("../../docs/commands/RDL.md"));
+        docs.insert("RER", include_str!("../../docs/commands/RER.md"));
         Self { docs }
     }
 }

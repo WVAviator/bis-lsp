@@ -1,0 +1,5 @@
+[options]
+C = "Call stack compatibility with BIS for Windows. When a script error occurs, do not unwind the call stack and local variables back to the call level of the original RER registration."
+J = "Enable Jump History collection."
+H = "Halt Jump History collection."
+P = "Protect the variables at this call level from examination by the `DIAG` statement at higher call levels."
