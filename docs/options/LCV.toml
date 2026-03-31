@@ -1,0 +1,7 @@
+[options]
+B = "**Bn** / **Bn-x** - Locates only the nth occurrence of the target string, or searches from the nth occurrence to the xth occurrence."
+C = "**C** - Distinguishes between uppercase and lowercase letters (case-sensitive matching)."
+L = "**Lx** - Locates a specific line type where `x` is the line type designator. The first character of the variable must match `x` or the statement stops processing."
+M = "**M** - Uses the transparent character (see `Tx`) as a mask to inhibit replacements. Characters in the variable at positions corresponding to transparent characters in the target string are not replaced."
+N = "**N** - Branches to the specified label when a find *is* made, rather than when no finds are made."
+T = "**Tx**` - Specifies the character to use as the transparent (wildcard) character. Also used as a mask character when `M` is specified. Default: space character."

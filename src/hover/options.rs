@@ -32,6 +32,8 @@ impl OptionsHoverProvider {
             .expect("Failed to parse FDR.toml.");
         let rer: CommandOptions = toml::from_str(include_str!("../../docs/options/RER.toml"))
             .expect("Failed to parse RER.toml.");
+        let lcv: CommandOptions = toml::from_str(include_str!("../../docs/options/LCV.toml"))
+            .expect("Failed to parse LCV.toml.");
 
         docs.insert("LDV", ldv.options);
         docs.insert("SRH", srh.options);
@@ -40,6 +42,7 @@ impl OptionsHoverProvider {
         docs.insert("BFN", bfn.options);
         docs.insert("FDR", fdr.options);
         docs.insert("RER", rer.options);
+        docs.insert("LCV", lcv.options);
 
         Self { docs }
     }
